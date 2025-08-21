@@ -1,0 +1,33 @@
+---
+id: examples
+title: Examples
+---
+
+import CodeBlock from "@theme/CodeBlock";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Admonition from "@theme/Admonition";
+
+# Examples
+
+## Email Request
+
+Send a bulk email using the **Email API**. You can customize:
+
+<Tabs>
+  <TabItem value="json" label="Json" default>
+```json
+{
+    "channel":"email",
+    "uid": "12456",
+    "to": "jaspreetsingh09912@gmail.com",
+    "from": "info@intelsend.com",
+    "template-id": "6761da1971c8c340961488c6",
+    "params": {
+        "NAME": "Riddhi",
+        "AMOUNT":"$ 1234"
+    }
+}
+```
+</TabItem>
+</Tabs>

@@ -1,0 +1,55 @@
+---
+id: request-body
+title: Request Body
+---
+
+import CodeBlock from "@theme/CodeBlock";
+import Admonition from "@theme/Admonition";
+
+# Request Body
+
+The request body defines the parameters required to send a voice message via the IntelSend API.
+
+---
+
+## Parameters
+
+| Name          | Type               | Required | Sample Value                                                                                                                      | Description                                                                                                                                    |
+| ------------- | ------------------ | -------- | --------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `template-id` | String             | ✅ Yes   | `688b634bf19b87633060398f`                                                                                                        | value of the template set via IntelSend admin portal.                                                                                          |
+| `campaignId`  | String             | ❌ No    | `kdjkadslfjl12323`                                                                                                                | value of the Campaign set via IntelSend admin portal.                                                                                          |
+| `channel`     | String             | ✅ Yes   | `sms`                                                                                                                             | channel must be sms in case of sending sms campaign                                                                                            |
+| `params`      | Array of key-value | ✅ Yes   | `[ { "uid": "abc-123", "to": "abc@gmail.com", "name": "Deepak" }, { "uid": "xyz-123", "to": "xyz@outlook.com", "name": "Jim" } ]` | Array of objects with key-value pairs. Keys are template variable names; values replace them dynamically. If no variables, array can be empty. |
+| `to`          | String             | ✅ Yes   | `3233933379`                                                                                                                      | The **sender phone **. Must be assigned/approved.                                                                                              |
+| `from`        | String             | ✅ Yes   | `9498671145`                                                                                                                      | The **sender phone**. Must be assigned/approved.                                                                                               |
+| `uid`         | String             | ✅ Yes   | `abc-123`                                                                                                                         | Unique identifier for tracking requests. Limit: 40 characters.                                                                                 |
+
+---
+
+## 🔎 Example JSON Payload
+
+<CodeBlock language="json">
+  {`{
+    "channel":"voice",
+    "uid": "1245346",
+    "to": "9495415188",
+    "from": "9498671145",
+    "template-id": "67a4868273af5742036b5f01",
+    // "campaignId":"kdjkadslfjl12323",
+    "params": {
+        "NAME": "Riddhi"
+    }
+}`}
+</CodeBlock>
+
+---
+
+<Admonition type="tip" title="Pro Tip 💡">
+  Always provide a unique `uid` for each request to avoid duplication and track
+  individual voice messages effectively.
+</Admonition>
+
+<Admonition type="info" title="See Also">
+  Refer to the [Examples](./examples.md) section for full sample requests and
+  responses.
+</Admonition>

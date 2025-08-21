@@ -1,0 +1,37 @@
+---
+id: response-body
+title: Response Body
+---
+
+# 📩 Response Body
+
+:::info
+The response provides details about each email request, including status, tracking IDs, and error codes (if any).
+:::
+
+## 📌 Parameters
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<Tabs>
+  <TabItem value="table" label="Parameters Table" default>
+
+| Name        | Type    | Sample Value                           | Description                                  |
+| ----------- | ------- | -------------------------------------- | -------------------------------------------- |
+| `message`   | String  | `QUEUED`                               | Intelsend proccess this request              |
+| `token`     | String  | `26afd98f-c6be-4707-a016-c92d8cc939ab` | return a tracking token id                                             |
+
+  </TabItem>
+
+  <TabItem value="json" label="Sample JSON">
+
+```json
+{
+    "message": "Queued",
+    "token": "26afd98f-c6be-4707-a016-c92d8cc939ab"
+}
+```
+
+  </TabItem>
+</Tabs>
