@@ -1,0 +1,50 @@
+---
+sidebar_position: 3
+title: Create
+---
+
+import CodeBlock from "@theme/CodeBlock";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Admonition from "@theme/Admonition";
+
+# Create SMS Template
+
+The **IntelSend SMS Template API** lets you create reusable templates for personalized and dynamic SMS campaigns.  
+
+With templates, you can design once and reuse across multiple campaigns—saving time, ensuring consistency, and delivering impactful messages at scale.
+
+---
+
+## Why Create SMS Templates?
+
+- 📱 **Reusable Messaging** → Avoid retyping common SMS  
+- 🎯 **Personalized Content** → Use placeholders like `{{NAME}}`  
+- ⏱ **Faster Campaign Setup** → Build once, send many  
+- 🔐 **Secure** → Manage with your IntelSend API session  
+
+---
+
+## Create an SMS Template (API Request)
+
+Use the following request to create a new **SMS Template**:
+
+```bash
+curl --location 'https://beta.intelsend.com/api/template/' \
+--header 'Content-Type: application/json' \
+--header 'Cookie: __Secure-next-auth.session-token=<YOUR_SESSION_TOKEN>' \
+--data '{
+  "templateName": "SMS Template",
+  "body": "Hello {{NAME}}, this is our SMS template.",
+  "channel": "sms"
+}'
+```
+---
+| Field          | Type   | Description                                                     |
+| -------------- | ------ | --------------------------------------------------------------- |
+| `templateName` | string | A name for your template (e.g., "Welcome SMS").                 |
+| `body`         | string | The SMS message body. Can include placeholders like `{{NAME}}`. |
+| `channel`      | string | Must be set to `"sms"`.                                         |
+
+✅ Once created, your SMS template will be available for retrieval and usage in your campaigns.
+Need help? Contact us at support@intelsend.com.

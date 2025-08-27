@@ -1,0 +1,123 @@
+---
+sidebar_position: 1
+title: Introduction
+---
+
+import CodeBlock from "@theme/CodeBlock";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Admonition from "@theme/Admonition";
+
+# Introduction
+
+IntelSend allows you to create reusable **Templates** for SMS, Email, and Voice.
+Templates save time by letting you define reusable content for your communications.
+
+---
+
+## Why Use Templates?
+
+- ✅ Save time by reusing pre-built content
+- ✅ Maintain consistent branding across all messages
+- ✅ Support placeholders (like `{{NAME}}`) for personalization
+- ✅ Manage via API (create, get, delete)
+
+---
+
+## Template Operations
+
+With the IntelSend API, you can:
+
+- **Create** a template
+- **Retrieve** your templates
+- **Delete** a template
+
+:::info What You'll Need
+
+- An [API Key](https://intelsend.com) to authenticate requests
+- Use the correct **channel**: `sms`, `email`, or `voice`
+  :::
+
+---
+
+## Create a Template
+
+<Tabs>
+  <TabItem value="sms" label="📱 SMS" default>
+
+```bash
+curl --location 'https://beta.intelsend.com/api/template/' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer <YOUR_API_KEY>' \
+--data '{
+  "templateName": "sms Template",
+  "body": "This is our sms Template , created by {{NAME}}",
+  "channel": "sms"
+}'
+```
+
+</TabItem> <TabItem value="Create Email" label="📧 Email">
+```bash
+curl --location 'https://beta.intelsend.com/api/template/' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer <YOUR_API_KEY>' \
+--data '{
+  "templateName": "Email Template",
+  "subject": "Creating an Email Template",
+  "body": "<!DOCTYPE html><html><body><h2>Hello World !</h2></body></html>",
+  "channel": "email"
+}'
+```
+</TabItem> <TabItem value="voice" label="🎤 Voice">
+```bash
+curl --location 'https://beta.intelsend.com/api/template/' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer <YOUR_API_KEY>' \
+--data '{
+  "templateName": "Voice Template",
+  "body": "<Response><Answer/><Pause length=\"1\"/></Response>",
+  "channel": "voice",
+  "voiceJson": {
+    "nodes": [
+      {
+        "id": "textnode_1",
+        "type": "textnode",
+        "data": {
+          "label": "Start Interaction",
+          "isStart": true,
+          "isEndNode": true,
+          "text": "Init"
+        }
+      }
+    ],
+    "edges": []
+  }
+}'
+```
+</TabItem>
+</Tabs>
+
+Get Templates
+
+Retrieve your existing templates:
+
+```bash
+curl --location 'https://beta.intelsend.com/api/template/' \
+--header 'Authorization: Bearer <YOUR_API_KEY>'
+
+```
+
+Delete a Template
+
+Delete a template by ID:
+
+```bash
+curl --location --request DELETE 'https://beta.intelsend.com/api/template/<TEMPLATE_ID>' \
+--header 'Authorization: Bearer <YOUR_API_KEY>'
+```
+
+---
+
+✅ You can now manage SMS, Email, and Voice templates programmatically.
+
+Need help? Reach out to our support team at [support@intelsend.com](mailto:support@intelsend.com).

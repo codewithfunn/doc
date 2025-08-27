@@ -1,0 +1,62 @@
+---
+sidebar_position: 4
+title: Delete
+---
+
+import CodeBlock from "@theme/CodeBlock";
+import Admonition from "@theme/Admonition";
+
+# Delete an SMS Template
+
+Remove unwanted or outdated SMS templates with the **IntelSend SMS Template API**.  
+This helps you keep your messaging library clean and up to date.
+
+---
+
+## When to Delete an SMS Template?
+
+- 🗑️ Template is outdated
+- ✨ Replaced by a newer version
+- 🧹 Cleaning up unused templates
+
+---
+
+## Delete SMS Template by ID
+
+To delete an SMS template, send a `DELETE` request to the IntelSend API with the **template ID**.
+
+<Admonition type="tip" title="Pro Tip">
+  Be careful when deleting — once removed, templates cannot be recovered.
+</Admonition>
+
+```bash
+curl --location --request DELETE 'https://beta.intelsend.com/api/template/?id=<TEMPLATE_ID>' \
+--header 'Cookie: __Secure-next-auth.session-token=<YOUR_SESSION_TOKEN>'
+```
+
+---
+
+Example
+
+```bash
+curl --location --request DELETE 'https://beta.intelsend.com/api/template/?id=663f3e0e7107b0fe7a12cbdc' \
+--header 'Cookie: __Secure-next-auth.session-token=eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..2W6Htv9tTsfaGhNh.7EvYvDBLUVyuCp8VCRKGObfZQPXklqXfcdmz_qN-KALHJzCzYYCWzDvzsQ7NixByulIRTNQMaefhrw4tfYNhOeLHM8x7VePdWpXMo5FKICwfFwGz9VvkfaXuNMWxQTaV_czzwjIiAsEB2ei7h117tGaDwaP4VZfIL6yAoGNeXB0Fy6z0zk65vyqX_gs8sFg9IjD7zef0JL3sH_x5EgbU2qpnC3ovj6gm5DL8n60dtZsKh36sCMuJt4pKPgzpQrBViqo3sFsZGXIo.V95YlLrYrzT5u5ey68WFZw'
+```
+
+---
+
+Example Response
+
+```json
+{
+  "result": "success",
+  "message": "1 Template(s) deleted successfully",
+  "status": 200
+}
+```
+
+---
+
+✅ Once deleted, the SMS template will no longer be available in your IntelSend account.
+Need help? Contact us at support@intelsend.com
+.

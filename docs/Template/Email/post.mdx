@@ -1,0 +1,84 @@
+---
+sidebar_position: 3
+title: Create
+---
+
+import CodeBlock from "@theme/CodeBlock";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Admonition from "@theme/Admonition";
+
+# Create Email Template
+
+The **IntelSend Email Template API** lets you create reusable templates for branded, personalized, and dynamic email campaigns.  
+
+With templates, you can design once and reuse across multiple campaigns—saving time, ensuring consistency, and keeping your messaging on-brand.
+
+---
+
+## Why Create Email Templates?
+
+- 📧 **Consistent Branding** → Reuse designs across campaigns  
+- 🎨 **Customizable Layouts** → Support for HTML, CSS, and structured JSON editor  
+- 🕒 **Save Time** → Build once, send many  
+- 🔐 **Secure** → Manage with your IntelSend API session  
+
+---
+
+## Create an Email Template (API Request)
+
+Use the following request to create a new **Email Template**:
+
+```bash
+curl --location 'https://beta.intelsend.com/api/template/' \
+--header 'Content-Type: application/json' \
+--header 'Cookie: __Secure-next-auth.session-token=<YOUR_SESSION_TOKEN>' \
+--data '{
+  "templateName": "Email Template",
+  "subject": "Creating an Email Template",
+  "body": "<!DOCTYPE html><html><head></head><body><div style=\"background-color:#F5F5F5;color:#262626;font-family:&quot;Helvetica Neue&quot;, &quot;Arial Nova&quot;, &quot;Nimbus Sans&quot;, Arial, sans-serif;font-size:16px;font-weight:400;letter-spacing:0.15008px;line-height:1.5;margin:0;padding:32px 0;min-height:100%;width:100%\"><table align=\"center\" width=\"100%\" style=\"margin:0 auto;max-width:600px;background-color:#FFFFFF\" role=\"presentation\" cellSpacing=\"0\" cellPadding=\"0\" border=\"0\"><tbody><tr style=\"width:100%\"><td><h2 style=\"font-weight:bold;margin:0;font-size:24px;padding:16px 24px 16px 24px\">Hello World !</h2></td></tr></tbody></table></div></body></html>",
+  "sendGridId": "",
+  "channel": "email",
+  "template": {
+    "root": {
+      "type": "EmailLayout",
+      "data": {
+        "backdropColor": "#F5F5F5",
+        "canvasColor": "#FFFFFF",
+        "textColor": "#262626",
+        "fontFamily": "MODERN_SANS",
+        "childrenIds": ["block-1756283875586"]
+      }
+    },
+    "block-1756283875586": {
+      "type": "Heading",
+      "data": {
+        "props": {
+          "text": "Hello World !"
+        },
+        "style": {
+          "padding": {
+            "top": 16,
+            "bottom": 16,
+            "left": 24,
+            "right": 24
+          }
+        }
+      }
+    }
+  }
+}'
+```
+---
+## Request Parameters
+| Field          | Type   | Description                                                   |
+| -------------- | ------ | ------------------------------------------------------------- |
+| `templateName` | string | A name for your template (e.g., "Welcome Email").             |
+| `subject`      | string | Subject line of the email.                                    |
+| `body`         | string | Full HTML content of the email.                               |
+| `sendGridId`   | string | Optional SendGrid template ID (leave empty if not using).     |
+| `channel`      | string | Must be set to `"email"`.                                     |
+| `template`     | object | JSON structure defining layout blocks (for IntelSend editor). |
+
+✅ Once created, your template will be available for retrieval and usage in campaigns.
+Need help? Contact us at support@intelsend.com.
