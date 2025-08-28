@@ -1,0 +1,93 @@
+---
+sidebar_position: 4
+title: Build
+---
+
+import CodeBlock from "@theme/CodeBlock";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Admonition from "@theme/Admonition";
+
+# Build Campaign
+
+The **Build Campaign API** finalizes or triggers the build process for an existing campaign.
+
+---
+
+## Endpoint
+
+```http
+PUT /api/campaign/{campaignId}/build
+```
+
+---
+
+Request Example
+
+<Tabs>
+<TabItem value="cURL" label="cURL">
+<CodeBlock language="bash"> 
+```bash
+curl --location --request PUT 'https://beta.intelsend.com/api/campaign/68b0b5ccfcccb5cfc3b1f4eb/build' \\ --header 'Cookie: __Secure-next-auth.session-token=eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..2W6Htv9tTsfaGhNh.7EvYvDBLUVyuCp8VCRKGObfZQPXklqXfcdmz_qN-KALHJzCzYYCWzDvzsQ7NixByulIRTNQMaefhrw4tfYNhOeLHM8x7VePdWpXMo5FKICwfFwGz9VvkfaXuNMWxQTaV_czzwjIiAsEB2ei7h117tGaDwaP4VZfIL6yAoGNeXB0Fy6z0zk65vyqX_gs8sFg9IjD7zef0JL3sH_x5EgbU2qpnC3ovj6gm5DL8n60dtZsKh36sCMuJt4pKPgzpQrBViqo3sFsZGXIo.V95YlLrYrzT5u5ey68WFZw'
+```
+</CodeBlock> 
+</TabItem> 
+<TabItem value="Node.js" label="Node.js"> 
+<CodeBlock language="javascript">
+{`import fetch from "node-fetch";
+const response = await fetch("https://beta.intelsend.com/api/campaign/68b0b5ccfcccb5cfc3b1f4eb/build
+", {
+method: "PUT",
+headers: {
+"Cookie": "__Secure-next-auth.session-token=YOUR_SESSION_TOKEN"
+}
+});
+
+const data = await response.json();
+console.log(data);`}
+
+</CodeBlock>
+</TabItem>
+</Tabs>
+
+---
+
+Path Parameters
+
+| Parameter    | Type   | Required | Description                |
+| ------------ | ------ | -------- | -------------------------- |
+| `campaignId` | string | ✅       | Unique campaign identifier |
+
+---
+
+Authentication
+This endpoint requires a valid session token passed as a cookie header:
+
+```bash
+Cookie: __Secure-next-auth.session-token=<token>
+```
+
+---
+
+Example Response
+
+<CodeBlock language="json">
+
+```json
+{ "result": "success" }
+```
+
+</CodeBlock>
+
+Response Fields
+| Field | Type | Description |
+| -------- | ------ | --------------------------------------------------------------------------- |
+| `result` | string | Status of the API call. `"success"` if the campaign was built successfully. |
+
+---
+
+<Admonition type="tip" title="Note">
+  {" "}
+  Make sure your campaign is fully configured before calling **Build**. This action
+  usually marks the campaign as ready for execution.{" "}
+</Admonition>
