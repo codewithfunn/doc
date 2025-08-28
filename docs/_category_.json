@@ -1,6 +1,6 @@
 {
-  "label": "Template API",
-  "position": 6,
+  "label": "API Documentation",
+  "position": 1,
   "link": {
     "type": "generated-index"
   }
