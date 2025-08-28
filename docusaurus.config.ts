@@ -67,45 +67,45 @@ const config: Config = {
     footer: {
       style: "dark",
       links: [
-        {
-          title: "Documentation",
-          items: [
-            {
-              label: "Docs",
-              to: "/docs/intro",
-            },
-          ],
-        },
-        {
-          title: "Community",
-          items: [
-            {
-              label: "Stack Overflow",
-              href: "https://stackoverflow.com/questions/tagged/docusaurus",
-            },
-            {
-              label: "Discord",
-              href: "https://discordapp.com/invite/docusaurus",
-            },
-            {
-              label: "X",
-              href: "https://x.com/docusaurus",
-            },
-          ],
-        },
-        {
-          title: "More",
-          items: [
-            {
-              label: "Doc",
-              to: "/docs",
-            },
-            {
-              label: "GitHub",
-              href: "https://github.com/intelsend/noc",
-            },
-          ],
-        },
+        // {
+        //   title: "Documentation",
+        //   items: [
+        //     {
+        //       label: "Docs",
+        //       to: "/docs/intro",
+        //     },
+        //   ],
+        // },
+        // {
+        //   title: "Community",
+        //   items: [
+        //     {
+        //       label: "Stack Overflow",
+        //       href: "https://stackoverflow.com/questions/tagged/docusaurus",
+        //     },
+        //     {
+        //       label: "Discord",
+        //       href: "https://discordapp.com/invite/docusaurus",
+        //     },
+        //     {
+        //       label: "X",
+        //       href: "https://x.com/docusaurus",
+        //     },
+        //   ],
+        // },
+        // {
+        //   title: "More",
+        //   items: [
+        //     {
+        //       label: "Doc",
+        //       to: "/docs",
+        //     },
+        //     {
+        //       label: "GitHub",
+        //       href: "https://github.com/intelsend/noc",
+        //     },
+        //   ],
+        // },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} IntelSent, Inc.`,
     },

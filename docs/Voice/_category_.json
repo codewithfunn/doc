@@ -1,8 +1,7 @@
 {
   "label": "Voice API",
-  "position": 2,
+  "position": 4,
   "link": {
-    "type": "generated-index",
-    "description": "Auth API"
+    "type": "generated-index"
   }
 }
