@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdemo_project=self.webpackChunkdemo_project||[]).push([[478],{2316:e=>{e.exports=JSON.parse('{"categoryGeneratedIndex":{"title":"Auth","description":"Auth API","slug":"/category/auth","permalink":"/docs/category/auth","sidebar":"tutorialSidebar","navigation":{"next":{"title":"Create Token","permalink":"/docs/Auth/create-token"}}}}')}}]);

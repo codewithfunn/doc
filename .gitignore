@@ -2,7 +2,16 @@
 /node_modules
 
 # Production
-/build
+# /build
+/docs
+/src
+/static
+.gitignore
+docusaurus.config.js
+package.json
+package-lock.json
+sidebars.js
+tsconfig.json
 
 # Generated files
 .docusaurus
