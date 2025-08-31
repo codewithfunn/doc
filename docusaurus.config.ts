@@ -11,14 +11,14 @@ const config: Config = {
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
-  url: "https://intelSend.com",
-  baseUrl: "/",
+  url: "https://github.com",
+  baseUrl: "/doc/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "facebook", // Usually your GitHub org/user name.
-  projectName: "IntelSend API Docs", // Usually your repo name.
-
+  organizationName: "codewithfunn", // Usually your GitHub org/user name.
+  projectName: "doc", // Usually your repo name.
+  deploymentBranch: "gh-pages",
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
 
